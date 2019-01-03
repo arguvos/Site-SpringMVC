@@ -39,4 +39,17 @@ public class HomeController {
         return "catalog";
     }
 
+    @PostMapping("filter")
+    public String filter(@RequestParam String filter, Map<String, Object> model) {
+        Iterable<Products> products;
+
+        if (filter != null && !filter.isEmpty()) {
+            products = productsRepository.findByName(filter);
+        } else {
+            products= productsRepository.findAll();
+        }
+
+        model.put("products", products);
+        return "catalog";
+    }
 }

@@ -12,6 +12,10 @@
         </form>
     </div>
     <div>Products list:</div>
+    <form method="post" action="filter">
+        <input type="text" name="filter"/>
+        <button type="submit">Search</button>
+    </form>
     {{#products}}
     <div>
         <b>{{id}}</b>
