@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <div>Add product:</div>
+            <input type="text" name="name" placeholder="Enter name of product"/>
+            <input type="text" name="description" placeholder="Enter description of product"/>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div>Products list:</div>
+    {{#products}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{name}}</span>
+        <i>{{description}}</i>
+    </div>
+    {{/products}}
+</body>
+</html>
