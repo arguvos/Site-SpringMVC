@@ -2,6 +2,8 @@ package com.example;
 
 import com.example.domain.Products;
 import com.example.repositoryes.ProductsRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
+
 
 @Controller
 public class HomeController {
@@ -26,6 +29,7 @@ public class HomeController {
     public String catalog(Map<String, Object> model) {
         Iterable<Products> products = productsRepository.findAll();
         model.put("products", products);
+        logger.info("Get catalog");
         return "catalog";
     }
 
@@ -36,6 +40,7 @@ public class HomeController {
 
         Iterable<Products> products = productsRepository.findAll();
         model.put("products", products);
+        logger.info("Add new productions to catalog: name {}, description {}", name, description);
         return "catalog";
     }
 
@@ -50,6 +55,7 @@ public class HomeController {
         }
 
         model.put("products", products);
+        logger.info("Filter productions by name: {}", filter);
         return "catalog";
     }
 }
