@@ -23,6 +23,7 @@ $RECYCLE.BIN/
 
 # IDEA files
 .idea/
+target/
 
 # =========================
 # Operating System Files
