@@ -21,6 +21,9 @@ $RECYCLE.BIN/
 # Java bytecode files
 *.class
 
+# IDEA files
+.idea/
+
 # =========================
 # Operating System Files
 # =========================

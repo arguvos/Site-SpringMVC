@@ -18,7 +18,8 @@ public class HomeController {
 
     @Autowired
     private ProductsRepository productsRepository;
-
+    private static final Logger logger = LogManager.getLogger();
+    
     @GetMapping
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Map<String, Object> model) {
         model.put("name", name);
